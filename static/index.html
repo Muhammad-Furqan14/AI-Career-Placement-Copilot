@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>AI Career Placement Copilot</title>
+
+    <link
+        rel="stylesheet"
+        href="/static/style.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- Animated Background -->
+
+    <div class="background-animation">
+
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+
+    </div>
+
+
+
+    <!-- Main Container -->
+
+    <div class="app-container">
+
+
+        <!-- Header -->
+
+        <header class="header">
+
+            <div class="logo-section">
+
+                <div class="logo-icon">
+                    🤖
+                </div>
+
+                <div>
+
+                    <h1>
+                        AI Career Placement Copilot
+                    </h1>
+
+                    <p>
+                        Your intelligent career analysis assistant
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Theme Button -->
+
+            <button
+                class="theme-toggle"
+                id="themeToggle"
+                type="button"
+                title="Change Theme"
+            >
+
+                <span id="themeIcon">
+                    🌙
+                </span>
+
+                <span id="themeText">
+                    Dark
+                </span>
+
+            </button>
+
+        </header>
+
+
+
+        <!-- Hero -->
+
+        <section class="hero">
+
+            <div class="ai-badge">
+
+                <span class="pulse-dot"></span>
+
+                AI POWERED CAREER INTELLIGENCE
+
+            </div>
+
+
+            <h2>
+                Discover Your
+                <span>Career Potential</span>
+            </h2>
+
+
+            <p>
+
+                Upload your CV, add a job description,
+                and let AI identify your skill match,
+                missing skills, and personalized learning roadmap.
+
+            </p>
+
+        </section>
+
+
+
+        <!-- Main Dashboard -->
+
+        <main class="dashboard">
+
+
+
+            <!-- LEFT SIDE -->
+
+            <section class="analysis-card">
+
+                <div class="card-heading">
+
+                    <div class="heading-icon">
+                        ✨
+                    </div>
+
+                    <div>
+
+                        <h2>
+                            Analyze Your Career Profile
+                        </h2>
+
+                        <p>
+                            Upload your resume and target job
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- Upload Label -->
+
+                <div class="form-group">
+
+                    <label class="section-label">
+
+                        <span>
+                            📄
+                        </span>
+
+                        Upload Your CV
+
+                    </label>
+
+
+
+                    <!-- Upload Box -->
+
+                    <div
+                        class="upload-box"
+                        id="uploadBox"
+                    >
+
+                        <input
+                            type="file"
+                            id="cv"
+                            accept=".pdf"
+                        >
+
+
+                        <div class="upload-content">
+
+
+                            <div
+                                class="upload-icon"
+                                id="uploadIcon"
+                            >
+                                ☁️
+                            </div>
+
+
+                            <h3
+                                id="uploadTitle"
+                            >
+                                Upload your CV
+                            </h3>
+
+
+                            <p
+                                id="uploadText"
+                            >
+                                Drag and drop or click to browse
+                            </p>
+
+
+                            <span
+                                class="file-format"
+                                id="fileFormat"
+                            >
+                                PDF • RESUME ANALYSIS
+                            </span>
+
+
+                            <!-- File Information -->
+
+                            <div
+                                class="selected-file hidden"
+                                id="selectedFile"
+                            >
+
+                                <div class="file-info">
+
+                                    <div class="success-check">
+                                        ✓
+                                    </div>
+
+                                    <div>
+
+                                        <span
+                                            class="selected-file-name"
+                                            id="fileName"
+                                        >
+                                        </span>
+
+                                        <small
+                                            id="fileSize"
+                                        >
+                                        </small>
+
+                                    </div>
+
+                                </div>
+
+
+                                <button
+                                    type="button"
+                                    class="remove-file"
+                                    id="removeFile"
+                                    title="Remove CV"
+                                >
+                                    ✕
+                                </button>
+
+                            </div>
+
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- Job Description -->
+
+                <div class="form-group">
+
+                    <label
+                        class="section-label"
+                        for="jobDescription"
+                    >
+
+                        <span>
+                            💼
+                        </span>
+
+                        Target Job Description
+
+                    </label>
+
+
+                    <textarea
+                        id="jobDescription"
+                        placeholder="Paste the complete job description here...
+
+Example:
+We are looking for an AI Engineer with skills in Python, Machine Learning, NLP, FastAPI, LLMs, RAG, LangChain and Vector Databases..."
+                    ></textarea>
+
+
+                    <div class="input-footer">
+
+                        <span>
+                            🤖 AI will compare your CV with this role
+                        </span>
+
+                        <span
+                            id="characterCount"
+                        >
+                            0 characters
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- Analyze Button -->
+
+                <button
+                    class="analyze-button"
+                    id="analyzeButton"
+                    type="button"
+                >
+
+                    <span class="button-icon">
+                        ✨
+                    </span>
+
+                    <span>
+                        Analyze My Career Match
+                    </span>
+
+                    <span class="button-arrow">
+                        →
+                    </span>
+
+                </button>
+
+
+                <!-- Loading -->
+
+                <div
+                    class="loading hidden"
+                    id="loading"
+                >
+
+                    <div class="loader"></div>
+
+                    <span>
+                        AI is analyzing your career profile...
+                    </span>
+
+                </div>
+
+
+            </section>
+
+
+
+            <!-- RIGHT SIDE -->
+
+            <aside class="preview-card">
+
+                <div class="preview-header">
+
+                    <div>
+
+                        <div class="preview-title">
+
+                            <span>
+                                👁️
+                            </span>
+
+                            CV Preview
+
+                        </div>
+
+                        <p>
+                            Your uploaded resume
+                        </p>
+
+                    </div>
+
+
+                    <div
+                        class="status-badge"
+                        id="previewStatus"
+                    >
+
+                        Waiting
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- Empty Preview -->
+
+                <div
+                    class="preview-empty"
+                    id="previewEmpty"
+                >
+
+                    <div class="empty-document">
+
+                        <div class="document-lines">
+
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+
+                        </div>
+
+                    </div>
+
+
+                    <h3>
+                        Your CV Preview
+                    </h3>
+
+
+                    <p>
+                        Upload a PDF and your resume
+                        will appear here.
+                    </p>
+
+                </div>
+
+
+
+                <!-- PDF Preview -->
+
+                <div
+                    class="pdf-preview hidden"
+                    id="pdfPreview"
+                >
+
+                    <iframe
+                        id="pdfViewer"
+                        title="CV Preview"
+                    >
+                    </iframe>
+
+                </div>
+
+
+
+                <!-- Preview Information -->
+
+                <div
+                    class="preview-info hidden"
+                    id="previewInfo"
+                >
+
+                    <div>
+
+                        <span class="info-label">
+                            STATUS
+                        </span>
+
+                        <strong>
+                            Ready for Analysis
+                        </strong>
+
+                    </div>
+
+
+                    <div class="ready-icon">
+                        ✓
+                    </div>
+
+                </div>
+
+
+            </aside>
+
+
+        </main>
+
+
+
+        <!-- Features -->
+
+        <section class="features">
+
+
+            <div class="feature">
+
+                <div class="feature-icon purple">
+                    🧠
+                </div>
+
+                <div>
+
+                    <h3>
+                        AI Skill Analysis
+                    </h3>
+
+                    <p>
+                        Identify your technical skills
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="feature">
+
+                <div class="feature-icon pink">
+                    📊
+                </div>
+
+                <div>
+
+                    <h3>
+                        Career Match Score
+                    </h3>
+
+                    <p>
+                        Compare CV with job requirements
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="feature">
+
+                <div class="feature-icon blue">
+                    🗺️
+                </div>
+
+                <div>
+
+                    <h3>
+                        Learning Roadmap
+                    </h3>
+
+                    <p>
+                        Get your personalized next steps
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- Results -->
+
+        <section
+            class="results hidden"
+            id="results"
+        >
+
+            <div class="results-header">
+
+                <div>
+
+                    <div class="ai-badge small">
+
+                        <span class="pulse-dot"></span>
+
+                        ANALYSIS COMPLETE
+
+                    </div>
+
+
+                    <h2>
+                        Your AI Career Analysis
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="results-grid">
+
+
+                <div class="result-card score-card">
+
+                    <h3>
+                        Career Match Score
+                    </h3>
+
+                    <div
+                        class="score-circle"
+                        id="matchScore"
+                    >
+                        0%
+                    </div>
+
+                </div>
+
+
+
+                <div class="result-card">
+
+                    <h3>
+                        ✓ Matched Skills
+                    </h3>
+
+                    <div
+                        class="skills-list"
+                        id="matchedSkills"
+                    >
+                    </div>
+
+                </div>
+
+
+
+                <div class="result-card">
+
+                    <h3>
+                        ⚠ Missing Skills
+                    </h3>
+
+                    <div
+                        class="skills-list"
+                        id="missingSkills"
+                    >
+                    </div>
+
+                </div>
+
+
+
+                <div class="result-card roadmap-result">
+
+                    <h3>
+                        🗺️ Personalized Learning Roadmap
+                    </h3>
+
+                    <div
+                        id="roadmap"
+                    >
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- Footer -->
+
+        <footer>
+
+            🤖 AI Career Placement Copilot
+
+            <span>
+                •
+            </span>
+
+            Built with AI for smarter career decisions
+
+        </footer>
+
+
+    </div>
+
+
+
+    <script src="/static/script.js"></script>
+
+</body>
+
+</html>
